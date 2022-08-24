@@ -13,13 +13,13 @@ body {
     padding: 20px 100px;
 }
 
-.mid-section {
-    padding: 20px 100px;
-}
-
 .navbar {
     display: flex;
     justify-content: space-between;
+}
+
+.ham-menu {
+    display: none;
 }
 
 .list {
@@ -54,10 +54,12 @@ i {
 }
 
 .header-part2-left {
-    flex-grow: 0.3;
+    width: 50%;
+    flex-grow: 1;
 }
 
 .header-part2-right {
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -77,8 +79,8 @@ i {
 }
 
 .header-img>img {
-    width: 600px;
-    object-fit: cover;
+    width: 100%;
+    object-fit: contain;
     object-position: top;
 }
 
@@ -144,13 +146,16 @@ i {
 .project-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 20px;
+    column-gap: 50px;
     row-gap: 20px;
 }
 
 .project-img {
     background-color: #1E1E1E;
-    padding: 50px;
+    padding: 30px;
+    width: 80%;
+    height: auto;
+    object-fit: cover;
 }
 
 .project-detail {
@@ -211,7 +216,6 @@ i {
 
 .feature-grid {
     background-color: #1E1E1E;
-    height: 300px;
     padding: 50px 50px;
 }
 
@@ -312,12 +316,60 @@ i {
     height: 15px;
 }
 
-.footer-logo {
-    padding: 5px;
-    position: absolute;
-}
-
 .nav-logo,
 .footer-logo {
     width: 100px;
+}
+
+@media (max-width:768px) {
+    body {}
+    .main-header {
+        margin: 0;
+        padding: 20px 10px;
+    }
+    .ham-menu {
+        display: flex;
+        justify-content: center;
+        /* width: 50px; */
+    }
+    .nav-list>li {
+        display: none;
+    }
+    .header-part2 {
+        flex-direction: column;
+    }
+    .header-part2-right,
+    .header-part2-left {
+        width: 100%;
+        padding: 0px 50px;
+        justify-items: center;
+    }
+    .feature-section {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
+    .project-section {
+        grid-template-columns: 1fr;
+    }
+    .banner {
+        padding: 50px 10px;
+        text-align: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .project-img {
+        padding: 0;
+        width: 100%;
+        overflow: hidden;
+        object-fit: cover;
+    }
+    .banner-title {
+        width: auto;
+    }
+    .footer-list {
+        padding: 10px;
+    }
 }
